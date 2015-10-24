@@ -1,3 +1,6 @@
+import java.util.Optional;
+import java.util.Scanner;
+
 /**
  *
  */
@@ -13,6 +16,10 @@ public class HelloWorld {
 	 */
 	public static void main(final String[] args) {
 		System.out.println("Hello ASE2015 - how are you now? :)");
+		try (final Scanner sc = new Scanner(System.in);) {
+			final Optional<String> input = Optional.of(sc.nextLine());
+			HelloUser.greetUser(input);
+		}
 	}
 
 }
